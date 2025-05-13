@@ -1,2 +1,2 @@
-RAW_DATASET_PATH = r"/mnt/c/Users/Arvin/OneDrive - ypt.or.id/Documents/ACADEMIA/SEMESTER 6/capstone/WORKING_FOLDER/DATASET/ExtractedDataset"
-EXTRACTED_DATASET_PATH = r"/mnt/c/Users/Arvin/OneDrive - ypt.or.id/Documents/ACADEMIA/SEMESTER 6/capstone/WORKING_FOLDER/DATASET/RawDataset"
+RAW_DATASET_PATH = r"/mnt/c/Users/Arvin/OneDrive - ypt.or.id/Documents/ACADEMIA/SEMESTER 6/capstone/WORKING_FOLDER/DATASET/RawDataset"
+EXTRACTED_DATASET_PATH = r"/mnt/c/Users/Arvin/OneDrive - ypt.or.id/Documents/ACADEMIA/SEMESTER 6/capstone/WORKING_FOLDER/DATASET/ExtractedDataset"

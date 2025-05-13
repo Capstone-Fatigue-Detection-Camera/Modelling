@@ -4,6 +4,7 @@ import numpy as np
 import mediapipe as mp
 from glob import glob
 from tqdm import tqdm
+from preprocess.config import 
 
 # 1) Configuration
 DATA_ROOT  = r'/mnt/c/Users/Arvin/OneDrive - ypt.or.id/Documents/ACADEMIA/SEMESTER 6/capstone/WORKING_FOLDER/DATASET/ExtractedDataset'
