@@ -56,6 +56,17 @@ while cap.isOpened():
     if not ret:
         break
 
+    # Resize to height 640 first, keeping aspect ratio
+    h_target = 640
+    scale = h_target / frame.shape[0]
+    resized_w = int(frame.shape[1] * scale)
+    frame = cv2.resize(frame, (resized_w, h_target))
+
+    # Crop width to center 360px (for 9:16 aspect ratio)
+    w_target = 360
+    start_x = max((resized_w - w_target) // 2, 0)
+    frame = frame[:, start_x:start_x + w_target]
+
     frame = cv2.flip(frame, 1)
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     results = face_mesh.process(rgb_frame)
@@ -77,7 +88,7 @@ while cap.isOpened():
             output = interpreter.get_tensor(output_details[0]['index'])
             drowsiness_prob = output[0][0]
 
-            status = "Drowsy" if drowsiness_prob > 0.6 else "Alert"
+            status = "Drowsy" if drowsiness_prob > 0.7 else "Alert"
             color = (0, 0, 255) if status == "Drowsy" else (0, 255, 0)
 
             cv2.putText(frame, f"Status: {status} ({drowsiness_prob:.2f})", (30, 30),
