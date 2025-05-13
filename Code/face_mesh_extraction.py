@@ -4,10 +4,10 @@ import numpy as np
 import mediapipe as mp
 from glob import glob
 from tqdm import tqdm
-from preprocess.config import 
+from preprocess.config import EXTRACTED_DATASET_PATH
 
 # 1) Configuration
-DATA_ROOT  = r'/mnt/c/Users/Arvin/OneDrive - ypt.or.id/Documents/ACADEMIA/SEMESTER 6/capstone/WORKING_FOLDER/DATASET/ExtractedDataset'
+DATA_ROOT  = EXTRACTED_DATASET_PATH
 SPLITS     = ['train', 'val', 'test']
 LABELS     = ['0', '1']
 SEQ_LEN    = 20
