@@ -43,13 +43,11 @@ def compute_mar(landmarks, w, h):
     return vert / (horz + 1e-8)
 
 # Initialize feature sequence deque
-SEQ_LEN = 60
+SEQ_LEN = 24
 feature_sequence = deque(maxlen=SEQ_LEN)
 
 # Start video capture
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 360)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 640)
 
 while cap.isOpened():
     ret, frame = cap.read()

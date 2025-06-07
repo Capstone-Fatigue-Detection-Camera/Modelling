@@ -15,7 +15,7 @@ from tensorflow.keras.callbacks import ReduceLROnPlateau, EarlyStopping
 # 1) Configuration
 tf.keras.utils.set_random_seed(1)
 tf.config.experimental.enable_op_determinism()
-SEQ_LEN      = 60
+SEQ_LEN      = 24
 FEATURES     = 2        
 EPOCHS       = 100
 BATCH_SIZE   = 128
@@ -61,7 +61,8 @@ early_stop   = EarlyStopping(
 # 5) Build model
 def build_model(seq_len, feature_dim):
     inp = Input(shape=(seq_len, feature_dim), name='seq_input')
-    x = GRU(64, recurrent_dropout=0.1)(inp)
+    x = GRU(128, recurrent_dropout=0.1)(inp)
+    x = Dense(64, activation='relu')(x)
     x = Dense(32, activation='relu')(x)
     out = Dense(1, activation='sigmoid')(x)
 

@@ -10,7 +10,7 @@ from preprocess.config import EXTRACTED_DATASET_PATH
 DATA_ROOT  = EXTRACTED_DATASET_PATH
 SPLITS     = ['train', 'val', 'test']
 LABELS     = ['0', '1']
-SEQ_LEN    = 20
+SEQ_LEN    = 24
 
 # 2) Initialize MediaPipe FaceMesh
 mp_face_mesh = mp.solutions.face_mesh
